@@ -1,0 +1,90 @@
+name: EssentialsPl
+version: 1.0.3
+main: org.hopto.pcrhome.essentialspl.EssentialsPl
+api-version: 1.13
+authors: [TheDoctor611]
+description: The essentials commands and mechanics for the players
+commands:
+  gm:
+    description: Changer de gamemode devient plus simple
+    usage: /CommandGm 0|1|2|3 [player]
+    permission: essential.gm.*
+  spawn:
+    description: Téléportation vers le spawn
+    usage: /spawn
+    permission: essential.spawn.tp
+  setspawn:
+    description: Set le spawn du serveur
+    usage: /setspawn
+    permission: essential.spawn.set
+  toggledown:
+    description: Enlevé la pluis dans tous les mondes
+    usage: /toggledown
+    aliases: [tg, toggledownfall, sun]
+    permission: essential.toggledown
+  nick:
+    description: Change ton nom sur le serveur
+    usage: /nick (nickname) [player]
+    permission: essential.nick.*
+  feed:
+    description: Te nourrir ou nourrir un autre joueur
+    usage: /feed [player]
+    permission: essential.feed.*
+  heal:
+    description: Soigne toi ou un autre joueur
+    usage: /heal [player]
+    permission: essential.heal.*
+  suicide:
+    description: Vous tue
+    usage: /suicide
+    aliases: [harakiri]
+    permission: essential.suicide.*
+  home:
+    description: Tp toi as ta maison
+    usage: /home
+    permission: essential.home.tp
+  sethome:
+    description: Placez votre maison a votre location
+    usage: /sethome
+    permission: essential.home.set
+  invis:
+    description: Set Invis
+    usage: /invis
+    aliases: [invisible, vanish]
+    permission: essential.invis.*
+  fly:
+    description: Let's fly, let's fly away
+    usage: /fly [player]
+    permission: essential.fly.*
+  tpa:
+    description: Demande de tp a un autre joueur
+    usage: /tpa (player)
+    permission: essential.tpa
+  tpaccept:
+    description: Accepté la demande de tp d'un autre joueur
+    usage: /tpaccept
+    permission: essential.tpa
+    aliases: [tpoui, tpyes]
+  tpdeny:
+    description: Refusé la demande de tp d'un autre joueur
+    usage: /tpdeny
+    permission: essential.tpa
+    aliases: [tpnon, tpno]
+  tpall:
+    description: Téléporté tous les joueur en ligne a toi
+    usage: /tpall
+    permission: essential.tpall
+    aliases: [tptous]
+  tphere:
+    description: Téléporte un joueur à toi
+    usage: /tphere (player)
+    permission: essential.tphere
+    aliases: [tpici]
+  warp:
+    description: create warp
+    usage: /warp create (warpName)
+    permission: essential.warp
+  chatadmin:
+    description: Voir les commandes utiliser par les joueurs
+    usage: /chatadmin
+    permission: essential.chatadmin
