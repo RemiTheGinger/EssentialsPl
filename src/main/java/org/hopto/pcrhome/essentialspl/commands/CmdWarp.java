@@ -30,7 +30,7 @@ public class CmdWarp implements CommandExecutor, TabCompleter {
         if(sender instanceof Player) {
             Player player = (Player) sender;
 
-            if (player.hasPermission("essential.warp")) {
+            if (player.hasPermission("essential.warp.*")) {
                 if (args.length < 1) {
 
                 } else if (args.length == 1) {
@@ -60,8 +60,12 @@ public class CmdWarp implements CommandExecutor, TabCompleter {
                             Location warpLoc = plugin.getWarpManager().getWarpLocation(args[0]);
 
                             if(warpLoc != null){
-                                player.teleport(warpLoc);
-                                Utils.sendInfo("Tu as été téléporté au warp " + ChatColor.GOLD + args[0].toLowerCase(), player, InfoType.INFO);
+                                if(player.hasPermission("essential.warp.tp")){
+                                    player.teleport(warpLoc);
+                                    Utils.sendInfo("Tu as été téléporté au warp " + ChatColor.GOLD + args[0].toLowerCase(), player, InfoType.INFO);
+                                } else{
+                                    Utils.sendInfo("Tu n'as pas la permission pour cette commande", sender, InfoType.ERROR);
+                                }
                             } else {
                                 Utils.sendInfo("Ce warp n'existe pas", player, InfoType.ERROR);
                             }
