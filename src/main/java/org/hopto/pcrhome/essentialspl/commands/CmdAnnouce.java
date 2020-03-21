@@ -10,7 +10,6 @@ import org.hopto.pcrhome.essentialspl.EssentialsPl;
 import org.hopto.pcrhome.essentialspl.InfoType;
 import org.hopto.pcrhome.essentialspl.lib.Utils;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 /*
@@ -39,14 +38,14 @@ public class CmdAnnouce implements CommandExecutor {
         if(sender.hasPermission("essential.annouce")){
             //Verifie si ils a des argurments sinon erreur
             if(!(args.length < 1)){
-                String colorizedAnnoucement = Utils.colorize(Arrays.toString(args));
+                String colorizedAnnoucement = Utils.colorize(String.join(" ", args));
 
                 //Création du Title, les fades sont calculé en ticks
                 annoucement = annoucement.builder()
                         .fadeIn(10)
                         .fadeOut(10)
-                        .stay(60)
-                        .title(ChatColor.GOLD + "Annonce")
+                        .stay(120)
+                        .title(ChatColor.GOLD + "== Annonce ==")
                         .subtitle(colorizedAnnoucement)
                         .build();
 
