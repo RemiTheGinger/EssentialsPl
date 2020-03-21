@@ -88,3 +88,7 @@ commands:
     description: Voir les commandes utiliser par les joueurs
     usage: /chatadmin
     permission: essential.chatadmin
+  hat:
+    description: Te permet de changé de chapeau
+    usage: /hat
+    permission: essential.hat
