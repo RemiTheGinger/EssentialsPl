@@ -27,6 +27,8 @@ public class CmdHat implements CommandExecutor {
 
                 //Verifie que le joueur a bien un item dans la main sinon Error
                 if(handItem != null){
+                    player.getInventory().setItemInMainHand(player.getInventory().getHelmet());
+                    
                     player.getInventory().setHelmet(handItem);
                     Utils.sendInfo("Tu as un nouveau chapeau", sender, InfoType.INFO);
                 }else {
