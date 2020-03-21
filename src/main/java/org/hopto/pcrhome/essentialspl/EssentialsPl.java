@@ -128,9 +128,12 @@ public final class EssentialsPl extends JavaPlugin {
             this.getCommand("invis").setExecutor(new CommandInvis());
             this.getCommand("fly").setExecutor(new commandFly());
             this.getCommand("chatadmin").setExecutor(new CmdChatAdmin());
+            this.getCommand("hat").setExecutor(new CmdHat());
+            this.getCommand("annouce").setExecutor(new CmdAnnouce(this));
+
             this.getCommand("tpall").setExecutor(new CmdTpall());
             this.getCommand("tphere").setExecutor(new CmdTphere());
-            this.getCommand("hat").setExecutor(new CmdHat());
+
 
             this.getCommand("warp").setExecutor(new CmdWarp());
 

@@ -92,3 +92,8 @@ commands:
     description: Te permet de changé de chapeau
     usage: /hat
     permission: essential.hat
+  annouce:
+    description: Te permet de faire une annonce à tous les joueur en ligne
+    usage: /annouce {(annonce)}
+    permission: essential.annouce
+    aliases: [annonce]
