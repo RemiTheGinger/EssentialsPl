@@ -1,5 +1,6 @@
 package org.hopto.pcrhome.essentialspl.commands;
 
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -26,7 +27,7 @@ public class CmdHat implements CommandExecutor {
                 ItemStack handItem = player.getInventory().getItemInMainHand();
 
                 //Verifie que le joueur a bien un item dans la main sinon Error
-                if(handItem != null){
+                if(handItem.getType() != Material.AIR){
                     player.getInventory().setItemInMainHand(player.getInventory().getHelmet());
                     
                     player.getInventory().setHelmet(handItem);
