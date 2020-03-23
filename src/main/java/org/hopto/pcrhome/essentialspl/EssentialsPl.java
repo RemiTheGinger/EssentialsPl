@@ -5,6 +5,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.hopto.pcrhome.essentialspl.commands.*;
+import org.hopto.pcrhome.essentialspl.commands.inventories.CmdEndersee;
+import org.hopto.pcrhome.essentialspl.commands.inventories.CmdInvsee;
 import org.hopto.pcrhome.essentialspl.commands.tp.CmdTpa;
 import org.hopto.pcrhome.essentialspl.commands.tp.CmdTpall;
 import org.hopto.pcrhome.essentialspl.commands.tp.CmdTphere;
@@ -130,6 +132,9 @@ public final class EssentialsPl extends JavaPlugin {
             this.getCommand("chatadmin").setExecutor(new CmdChatAdmin());
             this.getCommand("hat").setExecutor(new CmdHat());
             this.getCommand("annouce").setExecutor(new CmdAnnouce(this));
+
+            //Commandes d'inspection d'inventaire
+            this.getCommand("invsee").setExecutor( new CmdInvsee());
 
             this.getCommand("tpall").setExecutor(new CmdTpall());
             this.getCommand("tphere").setExecutor(new CmdTphere());
