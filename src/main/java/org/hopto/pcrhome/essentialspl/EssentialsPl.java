@@ -135,6 +135,7 @@ public final class EssentialsPl extends JavaPlugin {
 
             //Commandes d'inspection d'inventaire
             this.getCommand("invsee").setExecutor( new CmdInvsee());
+            this.getCommand("endersee").setExecutor(new CmdEndersee());
 
             this.getCommand("tpall").setExecutor(new CmdTpall());
             this.getCommand("tphere").setExecutor(new CmdTphere());
