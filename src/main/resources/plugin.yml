@@ -105,5 +105,5 @@ commands:
   endersee:
     description: Inspecte l'enderchest d'un joueur en ligne
     usage: /endersee (player)
-    permission: enssential.endersee
+    permission: essential.endersee
     aliases: [enderchest, enderlook]
