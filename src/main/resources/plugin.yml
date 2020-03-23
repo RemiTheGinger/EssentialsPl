@@ -97,3 +97,13 @@ commands:
     usage: /annouce {(annonce)}
     permission: essential.annouce
     aliases: [annonce]
+  invsee:
+    description: Inspecte l'inventaire d'un joueur en ligne
+    usage: /invsee (player)
+    permission: essential.invsee
+    aliases: [inventaire, invlook]
+  endersee:
+    description: Inspecte l'enderchest d'un joueur en ligne
+    usage: /endersee (player)
+    permission: enssential.endersee
+    aliases: [enderchest, enderlook]
