@@ -11,10 +11,12 @@ org\hopto\pcrhome\essentialspl\mechanics\NightPass.class
 org\hopto\pcrhome\essentialspl\commands\CommandHeal.class
 org\hopto\pcrhome\essentialspl\commands\CmdAnnouce.class
 org\hopto\pcrhome\essentialspl\commands\CommandToggleDown.class
+org\hopto\pcrhome\essentialspl\commands\inventories\CmdEndersee.class
 org\hopto\pcrhome\essentialspl\mechanics\UserDataHandler.class
 org\hopto\pcrhome\essentialspl\commands\tp\CmdTpa$2.class
 org\hopto\pcrhome\essentialspl\lib\WarpManager.class
 org\hopto\pcrhome\essentialspl\commands\CommandSuicide$1.class
+org\hopto\pcrhome\essentialspl\commands\inventories\CmdInvsee.class
 org\hopto\pcrhome\essentialspl\events\OnPlayerLeave.class
 org\hopto\pcrhome\essentialspl\commands\CommandSetHome.class
 org\hopto\pcrhome\essentialspl\commands\tp\CmdTpa.class
