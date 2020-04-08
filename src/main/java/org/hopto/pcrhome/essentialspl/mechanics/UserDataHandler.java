@@ -24,7 +24,7 @@ public class UserDataHandler {
 
     private Player player;
 
-    private Location home;
+    private Location home = null;
     private String nick;
 
     private boolean isInvis;
