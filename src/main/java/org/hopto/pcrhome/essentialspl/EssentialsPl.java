@@ -132,6 +132,7 @@ public final class EssentialsPl extends JavaPlugin {
             this.getCommand("chatadmin").setExecutor(new CmdChatAdmin());
             this.getCommand("hat").setExecutor(new CmdHat());
             this.getCommand("annouce").setExecutor(new CmdAnnouce(this));
+            this.getCommand("necro").setExecutor(new CmdNecro());
 
             //Commandes d'inspection d'inventaire
             this.getCommand("invsee").setExecutor( new CmdInvsee());

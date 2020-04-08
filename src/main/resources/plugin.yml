@@ -107,3 +107,7 @@ commands:
     usage: /endersee (player)
     permission: essential.endersee
     aliases: [enderchest, enderlook]
+  necro:
+    description: Utilise la tete d'un joueur pour trouver sa maison
+    usage: /necro
+    permission: essential.necro
