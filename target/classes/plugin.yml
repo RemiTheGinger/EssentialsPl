@@ -105,5 +105,9 @@ commands:
   endersee:
     description: Inspecte l'enderchest d'un joueur en ligne
     usage: /endersee (player)
-    permission: enssential.endersee
+    permission: essential.endersee
     aliases: [enderchest, enderlook]
+  necro:
+    description: Utilise la tete d'un joueur pour trouver sa maison
+    usage: /necro
+    permission: essential.necro

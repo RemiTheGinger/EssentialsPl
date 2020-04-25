@@ -30,22 +30,26 @@ public class CmdNecro implements CommandExecutor {
                 if(handItem.getType() == Material.PLAYER_HEAD){
 
                     SkullMeta meta = (SkullMeta) handItem.getItemMeta();
-                    UserDataHandler userData = plugin.getPlayerData((Player)meta.getOwningPlayer());
 
-                    if(userData.getHome()!= null)
-                    {
-                        String dir = getDirection(player,userData.getHome());
+                    if(meta.getOwningPlayer().isOnline()){
 
-                        Utils.sendInfo(dir, sender, InfoType.INFO);
+                        UserDataHandler userData = plugin.getPlayerData((Player) meta.getOwningPlayer());
 
-                        player.getInventory().removeItem(handItem);  //Suprime les têtes de sa main
+                        if(userData.getHome()!= null)
+                        {
+                            String dir = getDirection(player,userData.getHome());
 
+                            Utils.sendInfo(dir, sender, InfoType.INFO);
+                            Utils.sendInfo("Un joueur recherche votre maison", userData.getPlayer(), InfoType.INFO);
 
-                    }else {
-                        Utils.sendInfo("La personne n'a pas de maison.", sender, InfoType.ERROR);
+                            player.getInventory().removeItem(handItem);  //Suprime les têtes de sa main
+
+                        }else {
+                            Utils.sendInfo("La personne n'a pas de maison.", sender, InfoType.ERROR);
+                        }
+                    } else {
+                        Utils.sendInfo("Tu ne peux pas recherché une maison quand le joueur est hors ligne", sender, InfoType.ERROR);
                     }
-
-
 
                 }else {
                     Utils.sendInfo("Tu n'as pas de tête a faire parler dans ta main", sender, InfoType.ERROR);

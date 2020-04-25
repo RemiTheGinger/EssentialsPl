@@ -8,6 +8,7 @@ org\hopto\pcrhome\essentialspl\commands\CommandFeed.class
 org\hopto\pcrhome\essentialspl\commands\tp\CmdTpall.class
 org\hopto\pcrhome\essentialspl\commands\CommandHome$1.class
 org\hopto\pcrhome\essentialspl\mechanics\NightPass.class
+org\hopto\pcrhome\essentialspl\commands\CmdNecro.class
 org\hopto\pcrhome\essentialspl\commands\CommandHeal.class
 org\hopto\pcrhome\essentialspl\commands\CmdAnnouce.class
 org\hopto\pcrhome\essentialspl\commands\CommandToggleDown.class
