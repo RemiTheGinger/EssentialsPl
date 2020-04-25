@@ -83,7 +83,7 @@ commands:
   warp:
     description: create warp
     usage: /warp create (warpName)
-    permission: essential.warp
+    permission: essential.warp.*
   chatadmin:
     description: Voir les commandes utiliser par les joueurs
     usage: /chatadmin

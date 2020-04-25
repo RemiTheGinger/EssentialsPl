@@ -30,31 +30,35 @@ public class CmdWarp implements CommandExecutor, TabCompleter {
         if(sender instanceof Player) {
             Player player = (Player) sender;
 
-            if (player.hasPermission("essential.warp.*")) {
+            if (player.hasPermission("essential.warp")) {
                 if (args.length < 1) {
 
                 } else if (args.length == 1) {
 
                     switch (args[0]){
                         case "list":
-                            Set<String> warpNames = plugin.getWarpManager().getWarps().keySet();
-                            ArrayList<TextComponent> warpList = new ArrayList<TextComponent>();
+                            if(player.hasPermission("essential.warp.list")){
+                                Set<String> warpNames = plugin.getWarpManager().getWarps().keySet();
+                                ArrayList<TextComponent> warpList = new ArrayList<TextComponent>();
 
-                            for(String _warpName : warpNames){
-                                TextComponent warp = new TextComponent("- " + _warpName);
+                                for(String _warpName : warpNames){
+                                    TextComponent warp = new TextComponent("- " + _warpName);
 
-                                ClickEvent click = new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/warp " + _warpName);
-                                warp.setClickEvent(click);
-                                warp.setColor(net.md_5.bungee.api.ChatColor.LIGHT_PURPLE);
-                                warp.setBold(true);
-                                warpList.add(warp);
-                            }
+                                    ClickEvent click = new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/warp " + _warpName);
+                                    warp.setClickEvent(click);
+                                    warp.setColor(net.md_5.bungee.api.ChatColor.LIGHT_PURPLE);
+                                    warp.setBold(true);
+                                    warpList.add(warp);
+                                }
 
-                            player.sendMessage(ChatColor.GOLD + "======" + ChatColor.LIGHT_PURPLE + " List des warps " + ChatColor.GOLD + "======");
+                                player.sendMessage(ChatColor.GOLD + "======" + ChatColor.LIGHT_PURPLE + " List des warps " + ChatColor.GOLD + "======");
 
-                            for(TextComponent textComponent : warpList){
-                                player.spigot().sendMessage(textComponent);
-                            }
+                                for(TextComponent textComponent : warpList){
+                                    player.spigot().sendMessage(textComponent);
+                                }
+                            } else
+                                Utils.sendInfo("Tu n'as pas la permission pour cette commande", player, InfoType.ERROR);
+
                             break;
                         default:
                             Location warpLoc = plugin.getWarpManager().getWarpLocation(args[0]);
@@ -78,18 +82,25 @@ public class CmdWarp implements CommandExecutor, TabCompleter {
 
                     switch (subCommand){
                         case "create":
-                            if(plugin.getWarpManager().createWarp(warpName, player.getLocation())){
-                                Utils.sendInfo("Tu a créé le warp " + ChatColor.GOLD + warpName.toLowerCase() + ChatColor.LIGHT_PURPLE + " a ta location", player, InfoType.INFO);
-                            } else {
-                                Utils.sendInfo("Ce nom de warp est déja utilisé", player, InfoType.ERROR);
-                            }
+                            if(player.hasPermission("essential.warp.create")){
+                                if(plugin.getWarpManager().createWarp(warpName, player.getLocation())){
+                                    Utils.sendInfo("Tu a créé le warp " + ChatColor.GOLD + warpName.toLowerCase() + ChatColor.LIGHT_PURPLE + " a ta location", player, InfoType.INFO);
+                                } else
+                                    Utils.sendInfo("Ce nom de warp est déja utilisé", player, InfoType.ERROR);
+                            } else
+                                Utils.sendInfo("Tu n'as pas la permission pour cette commande", player, InfoType.ERROR);
+
                             break;
                         case "remove":
-                            if(plugin.getWarpManager().removeWarp(warpName)){
-                                Utils.sendInfo("Tu a remove le warp " + ChatColor.GOLD + warpName, player, InfoType.INFO);
-                            } else {
-                                Utils.sendInfo("Ce warp n'existe pas", player, InfoType.ERROR);
-                            }
+                            if(player.hasPermission("essential.warp.remove")){
+                                if(plugin.getWarpManager().removeWarp(warpName)){
+                                    Utils.sendInfo("Tu a remove le warp " + ChatColor.GOLD + warpName, player, InfoType.INFO);
+                                } else {
+                                    Utils.sendInfo("Ce warp n'existe pas", player, InfoType.ERROR);
+                                }
+                            } else
+                                Utils.sendInfo("Tu n'as pas la permission pour cette commande", player, InfoType.ERROR);
+
                             break;
                         default:
                             Utils.sendInfo("Cette commande n'existe pas", player, InfoType.ERROR);
